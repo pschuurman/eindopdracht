@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import styles from './SearchBarAllergen.module.css';
+import React, {useState} from 'react';
+import styles from './SearchBarCookOnTime.module.css';
 
-function SearchBarAllergen({setAllergenHandler}) {
-    const [allergen, setAllergen] = useState('');
+function SearchCookOnTime({setCookingTimeHandler}) {
+    const [cookingTime, setCookingTime] = useState('');
 
     function onFormSubmit(e) {
         e.preventDefault();
         console.log('submitted!');
 
-        setAllergenHandler(allergen);
+        setCookingTimeHandler(cookingTime);
     }
 
     return (
@@ -16,9 +16,9 @@ function SearchBarAllergen({setAllergenHandler}) {
             <input
                 type="text"
                 name="search"
-                value={allergen}
-                onChange={(e) => setAllergen(e.target.value)}
-                placeholder="Allergen to be excluded"
+                value={cookingTime}
+                onChange={(e) => setCookingTime(e.target.value)}
+                placeholder="Your time in minutes..."
             />
 
             <button
@@ -31,4 +31,4 @@ function SearchBarAllergen({setAllergenHandler}) {
     );
 }
 
-export default SearchBarAllergen;
+export default SearchCookOnTime;

@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import {AuthContext} from "../../context/AuthContext";
+import styles from './Navbar.module.css'
 
 function NavBar() {
     const {isAuth, logout} = useContext(AuthContext);
@@ -9,29 +10,62 @@ function NavBar() {
     return (
         <>
             <nav>
-                <button type="button" onClick={() => history.push('/')}>
+
+                <button
+                    className={styles["button-design"]}
+                    type="button" onClick={() => history.push('/')}
+                >
                     Home
                 </button>
+
+
                 {isAuth ?
-                    <button type="button" onClick={logout}>
-                        Log uit
-                    </button>
+                    <>
+
+                        <button
+                            className={styles["button-design"]}
+                            type="button" onClick={logout}
+                        >
+                            Logout
+                        </button>
+
+
+                        <button
+                            className={styles["button-design"]}
+                            type="button"
+                            onClick={() => history.push("/profile")}
+                        >
+                            Profile
+                        </button>
+
+                    </>
                     :
-                    <div>
-                    <button
-                    type="button"
-                    onClick={() => history.push("/inloggen")}
-                    >
-                    Log in
-                    </button>
-                    <button
-                    type="button"
-                    onClick={() => history.push("/aanmelden")}
-                    >
-                    Registreren
-                    </button>
-                    </div>
+                    <>
+
+                        <button
+                            className={styles["button-design"]}
+                            type="button"
+                            onClick={() => history.push("/login")}
+                        >
+                            Login
+                        </button>
+
+
+                        <button
+                            className={styles["button-design"]}
+                            type="button"
+                            onClick={() => history.push("/register")}
+                        >
+                            Register
+                        </button>
+
+
+                    </>
+
+
                 }
+
+
             </nav>
         </>
 

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styles from './SearchBar.module.css';
 
 function SearchBar({setFavoriteKitchenHandler}) {
     const [kitchen, setKitchen] = useState('');
@@ -17,11 +18,13 @@ function SearchBar({setFavoriteKitchenHandler}) {
                 name="search"
                 value={kitchen}
                 onChange={(e) => setKitchen(e.target.value)}
-                placeholder="Vul je favoriete keuken in"
+                placeholder="Your favourite kitchen is..."
             />
 
-            <button type="submit">
-                Zoek
+            <button
+                className={styles["button-design"]}
+                type="submit">
+                Search
             </button>
         </form>
     );

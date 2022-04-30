@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styles from './SearchBarKitchenFridge.module.css';
 
 function SearchBarKitchenFridge({setKitchenHandler}) {
     const [kitchen, setKitchen] = useState('');
@@ -17,15 +18,20 @@ function SearchBarKitchenFridge({setKitchenHandler}) {
                 name="search"
                 value={kitchen}
                 onChange={(e) => setKitchen(e.target.value)}
-                placeholder="Wat heb je nog in koelkast?"
+                placeholder="What's in your fridge?"
             />
 
-            <button type="submit">
-                Zoek
+            <button
+                className={styles["button-design"]}
+                type="submit"
+            >
+                Search
             </button>
         </form>
     );
 }
 
 export default SearchBarKitchenFridge;
+
+
 

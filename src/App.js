@@ -1,15 +1,15 @@
 import React, {useContext} from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
-import Homepage from './pages/Homepage';
-import AllergyFreePage from './pages/AllergyFreePage';
-import ChooseKitchenPage from './pages/ChooseKitchenPage';
-import MoodForFoodPage from './pages/MoodForFoodPage';
-import SurpriseMePage from './pages/SupriseMePage';
-import WhatsInYourFridgePage from './pages/WhatsInYourFridgePage';
-import LoginPage from './pages/LoginPage';
-import CookOnTimePage from "./pages/CookOnTimePage";
-import RegisterPage from "./pages/RegisterPage";
-import ProfilePage from "./pages/ProfilePage";
+import Homepage from './pages/HomePage/Homepage';
+import AllergyFreePage from './pages/AllergenFree/AllergyFreePage';
+import ChooseKitchenPage from './pages/ChooseKitchen/ChooseKitchenPage';
+import MoodForFoodPage from './pages/MoodForFood/MoodForFoodPage';
+import SurpriseMePage from './pages/SurpriseMe/SupriseMePage';
+import WhatsInYourFridgePage from './pages/WhatsInYourFridge/WhatsInYourFridgePage';
+import LoginPage from './pages/Login/LoginPage';
+import CookOnTimePage from "./pages/CookOnTime/CookOnTimePage";
+import RegisterPage from "./pages/Register/RegisterPage";
+import ProfilePage from "./pages/Profile/ProfilePage";
 import {AuthContext} from "./context/AuthContext";
 
 function App () {
@@ -20,31 +20,31 @@ function App () {
             <Route exact path="/">
                 <Homepage />
             </Route>
-            <Route path="/kies-je-keuken">
+            <Route path="/choose-your-kitchen">
                 <ChooseKitchenPage   />
             </Route>
-            <Route path="/wat-kan-ik-maken">
+            <Route path="/what-is-in-your-fridge">
                 <WhatsInYourFridgePage />
             </Route>
-            <Route path="/voor-elke-stemming-iets">
+            <Route path="/mood-for-food">
                 <MoodForFoodPage />
             </Route>
-            <Route path="/laat-je-verrassen">
+            <Route path="/surprise-me">
                 <SurpriseMePage />
             </Route>
-            <Route path="/kook-allergenenvrij">
+            <Route path="/allergen-free">
                 <AllergyFreePage />
             </Route>
-            <Route path="/kook-op-tijd">
+            <Route path="/right-on-time">
                 <CookOnTimePage />
             </Route>
-            <Route path="/inloggen">
+            <Route path="/login">
                 <LoginPage />
             </Route>
-            <Route path="/aanmelden">
+            <Route path="/register">
                 <RegisterPage />
             </Route>
-            <Route path="/profiel">
+            <Route path="/profile">
                 {isAuth ?  <ProfilePage /> : <Redirect to="/" />}
             </Route>
         </Switch>

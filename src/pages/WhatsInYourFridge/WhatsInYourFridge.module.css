@@ -3,6 +3,22 @@
     margin: 0px;
 }
 
+.kitchen-names {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 5px;
+    font-size: 10px;
+    width: 920px;
+    background-color: wheat;
+}
+
+.fridge {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .ingredients {
     display: flex;
     flex-direction: row;
@@ -22,48 +38,12 @@
     text-align: center;
 }
 
-
-.kitchen-names {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 5px;
-    font-size: 10px;
-    width: 920px;
-    background-color: wheat;
-}
-
 .region {
     margin-top: 5px;
     margin-left: 5px;
-}
-
-.instructions {
-    width: 300px;
-    background-color: wheat;
-    font-size: 10px;
-    border-radius: 5px;
-}
-
-.choose-kitchen {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.fridge {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
 }
 
 .error {
     color: red;
     margin-left: 5px;
 }
-
-
-
-
-
-

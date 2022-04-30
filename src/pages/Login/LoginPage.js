@@ -1,7 +1,9 @@
 import React, {useContext, useState} from 'react';
-import {AuthContext} from "../context/AuthContext";
+import {AuthContext} from "../../context/AuthContext";
 import {Link, useHistory} from "react-router-dom";
 import axios from "axios";
+import styles from './Login.module.css';
+import NavBar from "../../components/NavBar/NavBar";
 
 function LoginPage() {
     const {login} = useContext(AuthContext);
@@ -11,7 +13,7 @@ function LoginPage() {
 
     const history = useHistory();
 
-    async function RegisterUser(e) {
+    async function handleSubmit(e) {
         e.preventDefault()
         try {
             const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin',
@@ -20,8 +22,9 @@ function LoginPage() {
                     "password": password,
                 });
             console.log(response)
+            login(response);
 
-            history.push("/profiel")
+            history.push("/profile")
         } catch (e) {
             console.error(e.response);
 
@@ -29,53 +32,45 @@ function LoginPage() {
         }
     }
 
-
-    function RegisterUser(e) {
-        e.preventDefault();
-        console.log(userName, password);
-        login();
-    }
-
-
-
-
-
     return (
 
         <>
+            <NavBar/>
 
+            <form onSubmit={handleSubmit} className={styles.layout}>
 
-            <div>login pagina</div>
-
-            <form onSubmit={RegisterUser}>
-
-                <label htmlFor="login-username">
+                <label htmlFor="login-username" className={styles.form}>
                     Username:
-                    <input type="text"
+                    <input
+                           className={styles.form}
+                           type="text"
                            id="login-username"
                            onChange={(e) => setUsername(e.target.value)}
                            value={userName}
+                           placeholder="Fill in your username"
                     />
                 </label>
 
 
-                <label htmlFor="login-password">
+                <label htmlFor="login-password" className={styles.form}>
                     Password:
-                    <input type="password"
+                    <input
+                           className={styles.form}
+                           type="password"
                            id="login-password"
                            onChange={(e) => setPassword(e.target.value)}
                            value={password}
-                           placeholder="vul je wachtwoord in"
+                           placeholder="Fill in your password"
                     />
                 </label>
 
 
 
 
-                <button type="submit">Verzenden</button>
+                <button type="submit" className={styles["button-design"]}>Send</button>
             </form>
 
-            <p>Heb je nog geen account? <Link to="/aanmelden">Registreer</Link> je dan eerst.</p>
+            <p>No account yet? <Link to="/register">Register</Link> first.</p>
 
         </>
 

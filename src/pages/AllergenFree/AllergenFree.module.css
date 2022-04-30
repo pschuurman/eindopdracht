@@ -1,0 +1,30 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.allergen-names {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 5px;
+    font-size: 10px;
+    width: 920px;
+    background-color: wheat;
+}
+
+.allergen {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.error {
+    color: red;
+    margin-left: 5px;
+}
+
+.choose-allergen {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

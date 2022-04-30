@@ -1,0 +1,29 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.choose-time {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.ingredients {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 10px;
+    background-color: wheat;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 300px;
+}
+
+.instructions {
+    width: 300px;
+    background-color: wheat;
+    font-size: 10px;
+    border-radius: 5px;
+}

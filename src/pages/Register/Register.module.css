@@ -1,0 +1,29 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.error-message {
+    color: red;
+    font-size: 10px;
+}
+
+.good-message {
+    color: green;
+    font-size: 10px;
+    justify-content: center;
+}
+
+
+.layout {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: wheat;
+    padding: 32px;
+    max-width: 300px;
+}
+
+.form {
+    display: block;
+}

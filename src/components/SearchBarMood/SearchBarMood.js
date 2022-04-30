@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styles from './SearchBarMood.module.css';
 
 function SearchBarKitchen({setMoodHandler}) {
     const [mood, setMood] = useState('');
@@ -13,15 +14,18 @@ function SearchBarKitchen({setMoodHandler}) {
     return (
         <form onSubmit={onFormSubmit}>
             <input
+
                 type="text"
                 name="search"
                 value={mood}
                 onChange={(e) => setMood(e.target.value)}
-                placeholder="Waar heb je trek in?"
+                placeholder="I'm in the mood for..."
             />
 
-            <button type="submit">
-                Zoek
+            <button
+                className={styles["button-design"]}
+                type="submit">
+                Search
             </button>
         </form>
     );

@@ -3,12 +3,6 @@
     margin: 0px;
 }
 
-.homepage-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
 article {
     position: relative;
     padding: 5px;
@@ -27,4 +21,3 @@ img {
     height: 190px;
     width: 300px;
 }
-

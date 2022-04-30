@@ -3,25 +3,15 @@
     margin: 0px;
 }
 
+
 .button-design {
-    margin-left: 5px;
-    border: none;
+    border: solid gray;
     background-color: white;
 }
 
 .button-design:hover {
     cursor: pointer;
-    border: none;
+    border: solid green;
     text-decoration-color: green;
     color: green;
 }
-
-.button-design:active {
-    cursor: pointer;
-    border: none;
-    text-decoration-color: green;
-    color: green;
-}
-
-
-

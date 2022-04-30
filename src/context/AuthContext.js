@@ -11,15 +11,13 @@ function AuthContextProvider({children}) {
     const history = useHistory();
 
     function login() {
-        console.log('Gebruiker is ingelogd!');
         toggleIsAuth({
             ...isAuth, isAuth: true
         });
-        history.push("/profiel");
+        history.push("/profile");
     }
 
     function logout() {
-        console.log('Gebruiker is uitgelogd!');
         toggleIsAuth(
             {
                 ...isAuth,
