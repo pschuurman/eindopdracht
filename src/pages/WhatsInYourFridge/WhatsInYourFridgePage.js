@@ -56,32 +56,32 @@ function WhatsInYourFridgePage() {
 
 
                 {ingredientsData && <>
-                    <div className={styles.fridge}>{ingredientsData.map((ingredientsList) => {
+                    <section className={styles.fridge}>{ingredientsData.map((ingredientsList) => {
                         return (<article key={ingredientsList.id}>
                                 <p>{ingredientsList.title}</p>
                                 <img src={ingredientsList.image}/>
-                                <div className={styles["ingredients-titel"]}><strong>Ingredients in your fridge:</strong></div>
-                                <div className={styles["ingredients"]}>{ingredientsList.usedIngredients.map((ingredients) => {
+                                <section className={styles["ingredients-titel"]}><strong>Ingredients in your fridge:</strong></section>
+                                <section className={styles["ingredients"]}>{ingredientsList.usedIngredients.map((ingredients) => {
                                     return (
                                         <article key={ingredients.name}>
                                             <div>{ingredients.name}</div>
                                         </article>
                                     );
                                 })}
-                                </div>
-                                <div className={styles["ingredients-titel"]}><strong>Ingredients you need to buy:</strong></div>
-                                <div className={styles["ingredients"]}>{ingredientsList.missedIngredients.map((ingredients) => {
+                                </section>
+                                <section className={styles["ingredients-titel"]}><strong>Ingredients you need to buy:</strong></section>
+                                <section className={styles["ingredients"]}>{ingredientsList.missedIngredients.map((ingredients) => {
                                     return (
                                         <article key={ingredients.name}>
                                             <div>{ingredients.name}</div>
                                         </article>
                                     );
                                 })}
-                                </div>
+                                </section>
                             </article>
                         );
                     })}
-                    </div>
+                    </section>
                 </>
                 }
             </main>

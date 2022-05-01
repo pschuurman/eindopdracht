@@ -49,6 +49,8 @@ function LoginPage() {
                            value={userName}
                            placeholder="Fill in your username"
                     />
+                    {userName.length < 6 && <p className={styles["error-message"]}>Your username isn't long enough</p>}
+                    {userName.length >= 6 && <p className={styles["good-message"]}>Your username is long enough</p>}
                 </label>
 
 
@@ -62,12 +64,14 @@ function LoginPage() {
                            value={password}
                            placeholder="Fill in your password"
                     />
+                    {password.length < 6 && <p className={styles["error-message"]}>Your password isn't long enough</p>}
+                    {password.length >= 6 && <p className={styles["good-message"]}>Your password is long enough</p>}
                 </label>
 
 
 
 
-                <button type="submit" className={styles["button-design"]}>Send</button>
+                <button type="submit" className={styles["button-design"]}>Login</button>
             </form>
 
             <p>No account yet? <Link to="/register">Register</Link> first.</p>

@@ -39,17 +39,25 @@ function CookOnTimePage() {
         <>
             <header>
                 <NavBar/>
-                <SearchBarCookOnTime setCookingTimeHandler={setMinutes}/>
-                {error && <h6>No recipes found</h6>}
+
             </header>
             <main>
+                <section className={styles.cookingtime}>
+                    <p className={styles.region}>How much time do you have to prepare a meal?</p>
+                </section>
+                <section className={styles.cookingtime}>
+                    <SearchBarCookOnTime setCookingTimeHandler={setMinutes}/>
+                    {error && <h6>No recipes found</h6>}
+                </section>
+
+
                 {cookData && <>
                     <section className={styles["choose-time"]}>{cookData.results.map((cookList) => {
                         return (<article key={cookList.id}>
                                 <p>{cookList.title}</p>
                                 <img src={cookList.image}/>
-                                <div>Ready in: {cookList.readyInMinutes} minutes</div>
-                                <div
+                                <section>Ready in: {cookList.readyInMinutes} minutes</section>
+                                <section
                                     className={styles.ingredients}>{cookList.analyzedInstructions[0].steps[0].ingredients.map((ingredients) => {
                                     return (
                                         <article key={ingredients.name}>
@@ -57,9 +65,9 @@ function CookOnTimePage() {
                                         </article>
                                     );
                                 })}
-                                </div>
+                                </section>
 
-                                <div
+                                <section
                                     className={styles.instructions}>{cookList.analyzedInstructions[0].steps.map((instructions) => {
 
                                     return (
@@ -68,7 +76,7 @@ function CookOnTimePage() {
                                         </article>
                                     );
                                 })}
-                                </div>
+                                </section>
                             </article>
                         );
                     })}

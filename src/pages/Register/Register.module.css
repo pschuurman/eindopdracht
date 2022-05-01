@@ -27,3 +27,17 @@
 .form {
     display: block;
 }
+
+.button-design {
+    margin-left: 5px;
+    border: solid gray;
+    background-color: white;
+}
+
+.button-design:hover {
+    cursor: pointer;
+    border: solid green;
+    text-decoration-color: green;
+    color: green;
+}
+

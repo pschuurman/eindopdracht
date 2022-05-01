@@ -90,7 +90,7 @@ function RegisterPage() {
                     />
                 </label>
 
-                <button type="submit">Send</button>
+                <button type="submit" className={styles["button-design"]}>Register</button>
             </form>
 
 

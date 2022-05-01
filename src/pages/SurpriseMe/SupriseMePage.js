@@ -39,7 +39,7 @@ function SurpriseMePage() {
                 <div className={styles["surprise-layout"]}><p className="error">No recipes found, please try again</p></div>
             </>}
 
-            <div>
+            <section>
                 {Object.keys(surpriseData).length > 0 &&
                 <>
                     <article>
@@ -47,7 +47,7 @@ function SurpriseMePage() {
                         <img src={surpriseData.recipes[0].image}/>
                     </article>
                     <p className={styles.paragraph}>Preparation: {surpriseData.recipes[0].readyInMinutes} minutes</p>
-                    <div
+                    <section
                         className={styles.ingredients}>{surpriseData.recipes[0].analyzedInstructions[0].steps[0].ingredients.map((ingredientslist) => {
                         return (
                             <article key={ingredientslist.name}>
@@ -55,8 +55,8 @@ function SurpriseMePage() {
                             </article>
                         );
                     })}
-                    </div>
-                    <div
+                    </section>
+                    <section
                         className={styles.instructions}>{surpriseData.recipes[0].analyzedInstructions[0].steps.map((instructions) => {
                         return (
                             <article key={instructions.step}>
@@ -64,11 +64,11 @@ function SurpriseMePage() {
                             </article>
                         );
                     })}
-                    </div>
+                    </section>
 
                 </>
                 }
-            </div>
+            </section>
         </>
 
     );

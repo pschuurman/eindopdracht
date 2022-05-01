@@ -46,8 +46,8 @@ function MoodForFoodPage() {
                         return (<article key={moodList.id}>
                                 <p>{moodList.title}</p>
                                 <img src={moodList.image}/>
-                                <div>Ready in: {moodList.readyInMinutes} minutes</div>
-                                <div
+                                <section>Ready in: {moodList.readyInMinutes} minutes</section>
+                                <section
                                     className={styles["ingredients"]}>{moodList.analyzedInstructions[0].steps[0].ingredients.map((ingredients) => {
                                     return (
                                         <article key={ingredients.name}>
@@ -55,8 +55,8 @@ function MoodForFoodPage() {
                                         </article>
                                     );
                                 })}
-                                </div>
-                                <div className={styles["instructions"]}>{moodList.analyzedInstructions[0].steps.map((instructions) => {
+                                </section>
+                                <section className={styles["instructions"]}>{moodList.analyzedInstructions[0].steps.map((instructions) => {
 
                                     return (
                                         <article key={instructions.step}>
@@ -64,7 +64,7 @@ function MoodForFoodPage() {
                                         </article>
                                     );
                                 })}
-                                </div>
+                                </section>
                             </article>
                         );
                     })}

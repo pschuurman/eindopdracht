@@ -69,8 +69,8 @@ function ChooseKitchenPage() {
                         return (<article key={kitchenList.id}>
                                 <p>{kitchenList.title}</p>
                                 <img src={kitchenList.image}/>
-                                <div>Ready in: {kitchenList.readyInMinutes} minutes</div>
-                                <div
+                                <section>Ready in: {kitchenList.readyInMinutes} minutes</section>
+                                <section
                                     className={styles["ingredients"]}>{kitchenList.analyzedInstructions[0].steps[0].ingredients.map((ingredients) => {
                                     return (
                                         <article key={ingredients.name}>
@@ -78,8 +78,8 @@ function ChooseKitchenPage() {
                                         </article>
                                     );
                                 })}
-                                </div>
-                                <div
+                                </section>
+                                <section
                                     className={styles["instructions"]}>{kitchenList.analyzedInstructions[0].steps.map((instructions) => {
 
                                     return (
@@ -88,7 +88,7 @@ function ChooseKitchenPage() {
                                         </article>
                                     );
                                 })}
-                                </div>
+                                </section>
                             </article>
                         );
                     })}
